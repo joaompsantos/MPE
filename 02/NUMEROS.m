@@ -7,3 +7,4 @@ function [A, B, C, D]= NUMEROS(L)
 
     D=A(rem(A, 5)==0);
 end
+
