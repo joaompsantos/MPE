@@ -91,7 +91,7 @@ y_rx = filter(B, A, yd_rx_fin);
 imagesc(reshape(y_rx,N,N));
 colorbar
 
-% e)
+% g)
 % a distorção aparece estruturada em barras uma vez que y(n) é calculado
 % tendo em conta y(n), se y(n) tiver erro, todas as amostras para a frente
 % estao afetados pelo erro

@@ -20,11 +20,11 @@ bar(binCenters, H(1:nBins)) % mostrar
 
 %% 3)
 
-n = 1000; % numero de lancamentos
+n = 100000; % numero de lancamentos
 N = 2; % Numero de dados
 
 X = ceil(6*rand(N,n));
-X = sum(X(:,1:n));
+X = sum(X(:,:));
 minX = min(X(:));
 maxX = max(X(:));
 e = [minX:maxX+1]-0.5;

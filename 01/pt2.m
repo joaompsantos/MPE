@@ -1,7 +1,7 @@
 %% 1
 %caras = 1
 
-N = 1000; % n de execuções
+N = 1000; % n de execuções 
 n = 100; % numero de lancamentos
 m = 1; % numero de moedas
 ct = []; % contagem a cada execução
