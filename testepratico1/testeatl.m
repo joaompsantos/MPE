@@ -13,9 +13,10 @@ X = rem(prod(S(1:k-1,:)),10);
 
 %% Ex-3
 
-nBins_X = length(unique(X));
-h=histogram(X,nBins_X);
-h.BinEdges = [min(X):max(X)+1]-0.5;
+
+e = [min(X):max(X)+1]-0.5;
+nbins
+
 
 %% Ex-4
 Y = rem(prod(S(:,:)),10);
@@ -41,7 +42,7 @@ B = (Y==l);
 p_A = sum(A)/length(X);
 p_B = sum(A)/length(Y); % length(X) = length(Y)
 
-AeB = (A(:)==B(:));
+AeB = and(A,B);
 p_AeB = sum(AeB)/length(X); % #elementos em X,Y,A e B é o mesmo
 
 if(p_A*p_B==p_AeB)

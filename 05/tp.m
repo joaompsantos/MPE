@@ -81,4 +81,5 @@ h = ceil(99 * h) + 1;
 s = ceil(99 * s) + 1;
 
 detector(h,s,[indh1 indh2],[inds1 inds2])
-
+figure
+imshow(img)

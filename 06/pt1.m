@@ -68,15 +68,61 @@ plot(cumsum(Sn(:,100)'-Sn(:,51)'));
 % A contagem para n>50, o que tem p=0.5 nao depende da contagem feita
 % anteriormente ate 50 com p = 0.2, logo sao independentes.
 
+% plot(Sn(:,50)'-Sn(:,1)'),Sn(:,100)'-Sn(:,51)','o');
+
+
 
 %% Ex - 4
-% n*p = l*t
-
+% np = lt
 
 lambda = 1;
 t = 100;
+n = 10000;
+p = lambda*t/n;
+d = t/n;
+
+x = rand(10,n);
+Xn = 1*(x<=p);
+Sn = cumsum(Xn,2);
+
+figure
+plot((1:n)*d,Sn) % Processo de Soma
+title('Processo de Soma');
+
+figure
+hold on
+plot(1:t,(1:t)*lambda) % Teórico   
+title('Medias');
+plot((1:n)*d,mean(Sn)) % Experimental  
+legend('Teórica','Experimental')
 
 
-%%
+%% Ex - 5
+close all
 
+lambda = 1/4;
+
+t = 60;
+n = 1000;
+p = lambda*t/n;
+d = t/n;
+
+N = 10000;
+
+x = rand(N, n);
+Xn = 1*(x<=p);
+Sn = cumsum(Xn,2);
+
+
+idx_10 = floor(10*n/60);
+ctg = sum(Sn(:,idx_10)==3);
+p_N10e3 = ctg/N;
+
+idx_15 = round(15*n/60);
+ctg = sum(Sn(:,idx_15)==2);
+p_N15e2 = ctg/N;
+
+pf = p_N15e2*p_N10e3;
+
+pt = ((10/4)^3*exp(-10/4)/(3*2))*((10/4)^3*exp(-15/4)/(2));
 
